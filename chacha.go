@@ -1,7 +1,7 @@
-// Package chacharand implements a ChaCha-based cryptographically secure
-// pseudorandom number generator whose output is intended to be compatible
-// with Rust’s rand_chacha.
-package chacharand
+// Package chacha implements a ChaCha-based cryptographically secure
+// pseudorandom number generator intended to be compatible with Rust crate
+// rand_chacha.
+package chacha
 
 import (
 	"crypto/rand"
@@ -37,25 +37,25 @@ func new(rounds int) (*ChaCha, error) {
 	return seeded(rounds, seed, 0), nil
 }
 
-// Zero8 returns an instance of ChaCha8 created with a seed of all zeros, set
+// Zero8 returns an instance of ChaCha8 created from a seed of all zeros, set
 // to the given stream.
 func Zero8(stream uint64) *ChaCha {
 	return seeded(8, [8]uint32{}, stream)
 }
 
-// Zero20 returns a instance of ChaCha20 created with a seed of all zeros, set
+// Zero20 returns a instance of ChaCha20 created from a seed of all zeros, set
 // to the given stream.
 func Zero20(stream uint64) *ChaCha {
 	return seeded(20, [8]uint32{}, stream)
 }
 
-// Seeded8 returns an instance of ChaCha8 created with the given seed, set to
+// Seeded8 returns an instance of ChaCha8 created from the given seed, set to
 // the given stream.
 func Seeded8(seed [8]uint32, stream uint64) *ChaCha {
 	return seeded(8, seed, stream)
 }
 
-// Seeded20 returns an instance of ChaCha20 created with the given seed, set to
+// Seeded20 returns an instance of ChaCha20 created from the given seed, set to
 // the given stream.
 func Seeded20(seed [8]uint32, stream uint64) *ChaCha {
 	return seeded(20, seed, stream)
@@ -86,12 +86,12 @@ func seeded(rounds int, seed [8]uint32, stream uint64) *ChaCha {
 	}
 }
 
-// Uint8 returns a pseudo-random 8-bit value as a uint8.
+// Uint8 returns a pseudorandom 8-bit value as a uint8.
 func (rng *ChaCha) Uint8() uint8 {
 	return uint8(rng.Uint32())
 }
 
-// Uint16 returns a pseudo-random 16-bit value as a uint16.
+// Uint16 returns a pseudorandom 16-bit value as a uint16.
 func (rng *ChaCha) Uint16() uint16 {
 	return uint16(rng.Uint32())
 }

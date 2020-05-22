@@ -1,4 +1,4 @@
-package chacharand
+package chacha
 
 import "testing"
 

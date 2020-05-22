@@ -1,6 +1,6 @@
-package chacharand
+package chacha
 
-// FillUint8 generates len(slice) random uint8s and writes them into slice.
+// FillUint8 fills the given slice with pseudorandom uint8s.
 func (rng *ChaCha) FillUint8(slice []uint8) {
 	count := len(slice)
 	tailCount := len(slice) % 4
@@ -22,7 +22,7 @@ func (rng *ChaCha) FillUint8(slice []uint8) {
 	}
 }
 
-// FillUint16 generates len(slice) random uint16s and writes them into slice.
+// FillUint16 fills the given slice with pseudorandom uint16s.
 func (rng *ChaCha) FillUint16(slice []uint16) {
 	count := len(slice)
 	tailCount := len(slice) % 2
@@ -38,28 +38,28 @@ func (rng *ChaCha) FillUint16(slice []uint16) {
 	}
 }
 
-// FillUint32 generates len(slice) random uint32s and writes them into slice.
+// FillUint32 fills the given slice with pseudorandom uint32s.
 func (rng *ChaCha) FillUint32(slice []uint32) {
 	for i := range slice {
 		slice[i] = rng.Uint32()
 	}
 }
 
-// FillUint64 generates len(slice) random uint64s and writes them into slice.
+// FillUint64 fills the given slice with pseudorandom uint64s.
 func (rng *ChaCha) FillUint64(slice []uint64) {
 	for i := range slice {
 		slice[i] = rng.Uint64()
 	}
 }
 
-// FillFloat32 generates len(slice) random float32s and writes them into slice.
+// FillFloat32 fills the given slice with pseudorandom float32s.
 func (rng *ChaCha) FillFloat32(slice []float32) {
 	for i := range slice {
 		slice[i] = rng.Float32()
 	}
 }
 
-// FillFloat64 generates len(slice) random float64s and writes them into slice.
+// FillFloat64 fills the given slice with pseudorandom float64s.
 func (rng *ChaCha) FillFloat64(slice []float64) {
 	for i := range slice {
 		slice[i] = rng.Float64()
