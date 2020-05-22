@@ -1,5 +1,5 @@
 // Package chacha implements a ChaCha-based cryptographically secure
-// pseudorandom number generator intended to be compatible with Rust crate
+// pseudo-random number generator intended to be compatible with Rust crate
 // rand_chacha.
 package chacha
 
@@ -86,12 +86,12 @@ func seeded(rounds int, seed [8]uint32, stream uint64) *ChaCha {
 	}
 }
 
-// Uint8 returns a pseudorandom 8-bit value as a uint8.
+// Uint8 returns a pseudo-random 8-bit value as a uint8.
 func (rng *ChaCha) Uint8() uint8 {
 	return uint8(rng.Uint32())
 }
 
-// Uint16 returns a pseudorandom 16-bit value as a uint16.
+// Uint16 returns a pseudo-random 16-bit value as a uint16.
 func (rng *ChaCha) Uint16() uint16 {
 	return uint16(rng.Uint32())
 }
