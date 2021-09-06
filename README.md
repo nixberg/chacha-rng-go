@@ -1,3 +1,6 @@
+[![Go](https://github.com/nixberg/chacha-rng-go/actions/workflows/go.yml/badge.svg)](https://github.com/nixberg/chacha-rng-go/actions/workflows/go.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/nixberg/chacha-rng-go.svg)](https://pkg.go.dev/github.com/nixberg/chacha-rng-go)
+
 # ChaCha
 
 Package chacha implements a [ChaCha](https://cr.yp.to/chacha/chacha-20080128.pdf)-based
